@@ -1,0 +1,31 @@
+clear; close all; clc
+
+X = [0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00, 3.25, 3.50, 4.00, 4.25, 4.50, 4.75, 5.00, 5.50]';
+y = [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1]';
+
+X = [ones(size(y)), X];
+
+tic
+eta = 0.05;
+lambda = 0;
+theta = regularized_logistic_regression(X, y, eta, lambda)
+toc
+
+tic
+eta = 0.05;
+lambda = 0.1;
+theta = regularized_logistic_regression(X, y, eta, lambda)
+toc
+
+tic
+eta = 0.1;
+lambda = 0;
+theta = regularized_logistic_regression(X, y, eta, lambda)
+toc
+
+
+tic
+eta = 0.1;
+lambda = 0.1;
+theta = regularized_logistic_regression(X, y, eta, lambda)
+toc
